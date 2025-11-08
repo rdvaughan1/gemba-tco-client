@@ -1,49 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gemba TCO Dashboard</title>
-<link rel="stylesheet" href="styles.css" />
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemba Automotive Fleet TCO Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<main>
-<h1>Gemba Automotive Fleet TCO Dashboard</h1>
-<form id="vehicleForm">
-<h2>Add Vehicle</h2>
-<input type="number" id="acquisitionCost" placeholder="Acquisition Cost" required />
-<input type="number" id="upfittingCost" placeholder="Upfitting Cost" required />
-<input type="number" id="annualFuelCost" placeholder="Annual Fuel Cost" required />
-<input type="number" id="annualInsuranceCost" placeholder="Annual Insurance Cost" required />
-<input type="number" id="annualMaintenanceCost" placeholder="Annual Maintenance Cost" required />
-<input type="number" id="ageInYears" placeholder="Age (Years)" required />
-<input type="number" id="mileage" placeholder="Mileage" required />
-<input type="number" id="estimatedResaleValue" placeholder="Resale Value" required />
-<input type="text" id="group" placeholder="Vehicle Group (optional)" />
-<button type="submit">Add Vehicle</button>
-</form>
+  <header class="header">
+    <div class="header__container">
+      <img src="assets/logo‑gemba.png" alt="Gemba Automotive Logo" class="header__logo">
+      <h1 class="header__title">Gemba Fleet TCO Dashboard</h1>
+      <div class="theme‑toggle">
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
+    <!-- Vehicle Form Section -->
+    <form id="vehicleForm" class="card">
+      <h2>Add Vehicle</h2>
+      <input type="number" id="acquisitionCost" placeholder="Acquisition Cost" required />
+      <input type="number" id="upfittingCost" placeholder="Upfitting Cost" required />
+      <input type="number" id="annualFuelCost" placeholder="Annual Fuel Cost" required />
+      <input type="number" id="annualInsuranceCost" placeholder="Annual Insurance Cost" required />
+      <input type="number" id="annualMaintenanceCost" placeholder="Annual Maintenance Cost" required />
+      <input type="number" id="ageInYears" placeholder="Age (Years)" required />
+      <input type="number" id="mileage" placeholder="Mileage" required />
+      <input type="number" id="estimatedResaleValue" placeholder="Resale Value" required />
+      <input type="text" id="group" placeholder="Vehicle Group (optional)" />
+      <button type="submit" class="btn btn‑primary">Add Vehicle</button>
+    </form>
 
-<section id="dashboardSection">
-<h2>Fleet Analytics</h2>
-<label for="groupFilter">Select Group:</label>
-<select id="groupFilter">
-<option value="All">All Groups</option>
-</select>
-<div class="kpi‑widgets">
-<div class="widget">
-<h3>Total Cost / Year</h3>
-<p id="kpiTotalCostPerYear">--</p>
-</div>
-<div class="widget">
-<h3>Average Cost / Mile</h3>
-<p id="kpiAvgCostPerMile">--</p>
-</div>
-</div>
-<canvas id="chartGroupTrend"></canvas>
-</section>
-</main>
-<script src="script.js"></script>
+    <!-- Analytics Dashboard Section -->
+    <section id="dashboardSection" class="card">
+      <h2>Fleet Analytics</h2>
+      <div class="form‑group">
+        <label for="groupFilter">Select Group:</label>
+        <select id="groupFilter">
+          <option value="All">All Groups</option>
+        </select>
+      </div>
+      <div class="kpi‑widgets">
+        <div class="widget">
+          <h3>Total Cost / Year</h3>
+          <p id="kpiTotalCostPerYear">--</p>
+        </div>
+        <div class="widget">
+          <h3>Average Cost / Mile</h3>
+          <p id="kpiAvgCostPerMile">--</p>
+        </div>
+      </div>
+      <canvas id="chartGroupTrend"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Gemba Automotive. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
